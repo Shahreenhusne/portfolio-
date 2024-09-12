@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Crytocap",
+    "imageSrc": "projects/project.png",
+    "skills": ["React", " TypeScript,", "Tailwind CSS,"],
+    "demo": "https://cryptocapbd.netlify.app/",
+    "source": "https://github.com/Shahreenhusne/CryptoCap"
+  },
+  {
+    "title": "Guess-the-word",
+    "imageSrc": "projects/project.png",
+    "skills": ["Next.js", "Typescript", "Tailwind CSS"],
+    "demo": "https://guess-the-word-six-beta.vercel.app/",
+    "source": "https://github.com/Shahreenhusne/Guess-The-Word"
+  },
+  {
+    "title": "To-DO-List",
+    "imageSrc": "projects/project.png",
+    "skills": ["React", "Tailwind Css", "Redux React Toolkit"],
+    "demo": "https://github.com/Shahreenhusne/To-Do-List-with-Redux",
+    "source": "https://github.com/Shahreenhusne/To-Do-List-with-Redux"
+  }
+]

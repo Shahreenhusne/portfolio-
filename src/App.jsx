@@ -1,14 +1,21 @@
-import './App.css';
-import Hero from './sections/Hero/Hero';
-import Skills from './sections/Skills/Skills';
+import styles from "./App.module.css";
+import { About } from "./components/About/About";
+import { Contact } from "./components/Contact/Contact";
+import { Experience } from "./components/Experience/Experience";
+import { Hero } from "./components/Hero/Hero";
+import { Navbar } from "./components/Navbar/Navbar";
+import { Projects } from "./components/Projects/Projects";
 
 function App() {
   return (
-    <>
+    <div className={styles.App}>
+      <Navbar />
       <Hero />
-      <Skills />
-      
-    </>
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+    </div>
   );
 }
 
