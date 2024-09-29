@@ -13,7 +13,8 @@
     "@fontsource/outfit": "^5.0.15",
     "@fontsource/roboto": "^5.0.15",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-web-share": "^2.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

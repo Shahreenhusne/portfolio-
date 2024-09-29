@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -11,7 +10,7 @@ export const Hero = () => {
         <p className={styles.description}>
         I am a dedicated software engineer with a strong foundation in development, honed through diverse experiences at Openhaus and Concord Group. Proficient in Python, React, Node.js, and more, I aim to leverage my skills to drive impactful contributions.
         </p>
-        <a href="shahreen.husne.rabbani@gmail.com" className={styles.contactBtn}>
+        <a href="shahreen.husne.rabbani@gmail.com" target="_black" className={styles.contactBtn}>
           Contact Me
         </a>
       </div>
