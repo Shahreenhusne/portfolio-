@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const path = require('path');
 
-module.exports = nextConfig
+module.exports = {
+  distDir: 'dist', // Specify the custom build output directory
+};
