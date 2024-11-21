@@ -2,5 +2,8 @@
 const path = require('path');
 
 module.exports = {
-  distDir: 'dist', // Specify the custom build output directory
+  distDir: 'dist', // Custom output directory for the build
+  experimental: {
+    appDir: true, // Enable the App Router
+  },
 };
