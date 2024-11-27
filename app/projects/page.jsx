@@ -6,6 +6,7 @@ import Crytocap from "@public/img/Crytocap.png";
 import InddorPlants from "@public/img/Indoorplants.png";
 import Link from "@public/img/link.png";
 import Vtmerch from "@public/img/Vtmerch.png";
+import Ahar24 from "@public/img/Ahar24.png"
 import { useState } from "react";
 const ProjectsPage = () => {
   const projects = [
@@ -61,6 +62,15 @@ const ProjectsPage = () => {
       tags: ["React", "Redux-toolkit"],
       desc: "Simple to do list with Redux-toolkit",
       ghLink: "https://github.com/Shahreenhusne/To-Do-List-with-Redux",
+      demoLink: "",
+    },
+    {
+      id: 7,
+      image: Ahar24,
+      title: "Ahar24",
+      tags: ["React", "Node"],
+      desc: "Backend is yet to be build",
+      ghLink: "https://github.com/Shahreenhusne/Ahar24",
       demoLink: "",
     },
   ];
