@@ -2,7 +2,7 @@
 
 ## Dependencies 
 
-- Next.js: A React framework for server-rendered applications.
+- Next.js: A  framework for server-rendered applications.
 - Three.js: A JavaScript library for creating and displaying 3D computer graphics in a web browser.
 - React Three Fiber: React renderer for Three.js.
 - EmailJS: Library for sending emails from React.
