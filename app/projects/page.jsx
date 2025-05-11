@@ -6,8 +6,11 @@ import Crytocap from "@public/img/Crytocap.png";
 import InddorPlants from "@public/img/Indoorplants.png";
 import Link from "@public/img/link.png";
 import Vtmerch from "@public/img/Vtmerch.png";
-import Ahar24 from "@public/img/Ahar24.png"
+import Ahar24 from "@public/img/Ahar24.png";
+import ArtBoard from "@public/img/ArtBoard.png";
+import ChatApp from "@public/img/ChatApp.png";
 import { useState } from "react";
+
 const ProjectsPage = () => {
   const projects = [
     {
@@ -42,7 +45,7 @@ const ProjectsPage = () => {
       image: Vtmerch,
       title: "VTMERCH",
       tags: ["React", "taiwild"],
-      desc: "React website with tailwind css",
+      desc: "Clothing Website Homepage",
       ghLink: "https://github.com/Shahreenhusne/VTMERCH",
       demoLink: "https://app.netlify.com/sites/vtmarch/overview ",
     },
@@ -69,8 +72,26 @@ const ProjectsPage = () => {
       image: Ahar24,
       title: "Ahar24",
       tags: ["React", "Node"],
-      desc: "Backend is yet to be build",
+      desc: "Food Delivery App",
       ghLink: "https://github.com/Shahreenhusne/Ahar24",
+      demoLink: "",
+    },
+    {
+      id: 8,
+      image: ArtBoard,
+      title: "ArtBoard",
+      tags: ["React","Tailwind CSS"],
+      desc: "An art board by shahren",
+      ghLink: "https://github.com/Shahreenhusne/Art-Board",
+      demoLink: "artboardbyshahreen.netlify.app",
+    },
+      {
+      id: 9,
+      image: ChatApp,
+      title: "ChatApp",
+      tags: ["Next-Auth","Firestore"],
+      desc: "Using OpenAI api",
+      ghLink: "https://github.com/Shahreenhusne/chatapp-with-openAi",
       demoLink: "",
     },
   ];
