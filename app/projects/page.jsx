@@ -1,9 +1,10 @@
 "use client";
 import ProjectCard from "@components/ProjectCard";
+import Dashboard from "@public/img/Dashboard.png";
 import Todo from "@public/img/Todo.png";
 import Wordnik from "@public/img/Wordnik.png";
 import Crytocap from "@public/img/Crytocap.png";
-import InddorPlants from "@public/img/Indoorplants.png";
+import IndoorPlants from "@public/img/Indoorplants.png";
 import Link from "@public/img/link.png";
 import Vtmerch from "@public/img/Vtmerch.png";
 import Ahar24 from "@public/img/Ahar24.png";
@@ -24,7 +25,16 @@ const ProjectsPage = () => {
     },
     {
       id: 2,
-      image: InddorPlants,
+      image: Dashboard,
+      title: "School Dashboard",
+      tags: ["Nextjs", "Typescript","Tailwind"],
+      desc: "Nextjs School management Dashboard",
+      ghLink: "https://github.com/Shahreenhusne?tab=repositories",
+     
+    },
+    {
+      id: 3,
+      image: IndoorPlants,
       title: "Indoor Plants",
       tags: ["React", "Typescript","Tailwind"],
       desc: "This is an animated static site with react tailwind and scss",
@@ -32,7 +42,7 @@ const ProjectsPage = () => {
       demoLink: "https://indoplants.netlify.app/#popular",
     },
     {
-      id: 3,
+      id: 4,
       image: Wordnik,
       title: "Guess the Word",
       tags: ["Next js","Wordnik Api"],
@@ -41,7 +51,7 @@ const ProjectsPage = () => {
       demoLink: "https://guess-the-word-ep6k3v683-shahreens-projects.vercel.app/",
     },
     {
-      id: 4,
+      id: 5,
       image: Vtmerch,
       title: "VTMERCH",
       tags: ["React", "taiwild"],
@@ -50,7 +60,7 @@ const ProjectsPage = () => {
       demoLink: "https://app.netlify.com/sites/vtmarch/overview ",
     },
     {
-      id: 5,
+      id: 6,
       image: Link,
       title: "Django Api",
       tags: ["Django"],
@@ -59,7 +69,7 @@ const ProjectsPage = () => {
       demoLink: "",
     },
     {
-      id: 6,
+      id: 7,
       image: Todo,
       title: "To do list",
       tags: ["React", "Redux-toolkit"],
@@ -68,7 +78,7 @@ const ProjectsPage = () => {
       demoLink: "",
     },
     {
-      id: 7,
+      id: 8,
       image: Ahar24,
       title: "Ahar24",
       tags: ["React", "Node"],
@@ -77,7 +87,7 @@ const ProjectsPage = () => {
       demoLink: "",
     },
     {
-      id: 8,
+      id: 9,
       image: ArtBoard,
       title: "ArtBoard",
       tags: ["React","Tailwind CSS"],
@@ -86,7 +96,7 @@ const ProjectsPage = () => {
       demoLink: "artboardbyshahreen.netlify.app",
     },
       {
-      id: 9,
+      id: 10,
       image: ChatApp,
       title: "ChatApp",
       tags: ["Next-Auth","Firestore"],
