@@ -57,7 +57,7 @@ const ProjectsPage = () => {
       tags: ["React", "taiwild"],
       desc: "Clothing Website Homepage",
       ghLink: "https://github.com/Shahreenhusne/VTMERCH",
-      demoLink: "https://app.netlify.com/sites/vtmarch/overview ",
+      
     },
     {
       id: 6,
@@ -93,7 +93,7 @@ const ProjectsPage = () => {
       tags: ["React","Tailwind CSS"],
       desc: "An art board by shahren",
       ghLink: "https://github.com/Shahreenhusne/Art-Board",
-      demoLink: "artboardbyshahreen.netlify.app",
+    
     },
       {
       id: 10,
