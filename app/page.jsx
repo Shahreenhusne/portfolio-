@@ -1,66 +1,42 @@
-"use client";
+import { prisma } from "@/lib/prisma";
+import { ActiveSectionProvider } from "@/components/layout/Sidebar/ActiveSectionContext";
+import PageShell from "@/components/layout/PageShell";
+import Hero from "@/components/sections/Hero/Hero";
+import Education from "@/components/sections/Education/Education";
+import Experience from "@/components/sections/Experience/Experience";
+import Portfolio from "@/components/sections/Portfolio/Portfolio";
+import ExtracurricularSection from "@/components/sections/Extracurricular/ExtracurricularSection";
+import Skills from "@/components/sections/Skills/Skills";
+import Contact from "@/components/sections/Contact/Contact";
 
-import DynamicText from "@components/DynamicText";
-import ModelViewer from "@components/ModelViewer";
-import SocialLinks from "@components/SocialLinks";
-import Arrow from "@components/logos/Arrow";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+export const dynamic = "force-dynamic";
 
-import { Analytics } from "@vercel/analytics/react";
-
-const Home = () => {
-  const router = useRouter();
-
-  const handleScrollToBottom = (event) => {
-    event.preventDefault();
-    const targetElement = document.getElementById("bottom");
-    targetElement.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    const link = document.querySelector(".scroll-to-bottom");
-    if (link) {
-      link.addEventListener("click", handleScrollToBottom);
-    }
-
-    return () => {
-      if (link) {
-        link.removeEventListener("click", handleScrollToBottom);
-      }
-    };
-  }, []);
+export default async function Home() {
+  const [projects, experience, activities] = await Promise.all([
+    prisma.project.findMany({
+      where: { featured: true },
+      orderBy: { order: "asc" },
+      take: 8,
+    }),
+    prisma.experience.findMany({
+      orderBy: { order: "asc" },
+    }),
+    prisma.activity.findMany({
+      orderBy: { order: "asc" },
+    }),
+  ]);
 
   return (
-    <>
-      <div className="main">
-        <div className="hero">
-          <ModelViewer />
-          <DynamicText />
-          <SocialLinks />
-          <a href="#" className="scroll-to-bottom">
-            <Arrow className="arrow" />
-          </a>
-        </div>
-        <div className="about" id="bottom">
-          <div className="contain">
-            <div className="about-desc">
-              <div className="about-title">About Me</div>
-              <div className="about-text">
-                <p>
-                I am a BRAC University Computer Science and Engineering graduate with over a year of hands-on experience in web development. My professional journey has allowed me to work with modern technologies such as React, Next.js, Tailwind CSS, Bootstrap, JavaScript, MySQL, and Python, contributing to dynamic and impactful projects. 
-                I am also proficient in collaboration tools like GitHub, Jira, and Notion, which have enhanced my ability to work efficiently in team environments.
-                 <br/>With a strong foundation in Python, I am eager to deepen my expertise in the language, aiming to explore the exciting world of Artificial Intelligence. 
-                 Passionate about continuous learning and innovation, I aspire to leverage my skills and knowledge to create meaningful solutions in the tech industry.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Analytics />
-    </>
+    <ActiveSectionProvider>
+      <PageShell>
+        <Hero />
+        <Education />
+        <Experience items={experience} />
+        <Portfolio projects={projects} />
+        <ExtracurricularSection id="extracurricular" activities={activities} />
+        <Skills />
+        <Contact />
+      </PageShell>
+    </ActiveSectionProvider>
   );
-};
-
-export default Home;
+}

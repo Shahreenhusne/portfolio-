@@ -1,0 +1,81 @@
+HOW TO RUN POSTGRESQL FOR THIS PROJECT
+=======================================
+
+This project uses PostgreSQL + Prisma to store Projects and Work Experience.
+Pick ONE of the two options below.
+
+
+OPTION A — Docker (recommended, no local Postgres install needed)
+-------------------------------------------------------------------
+
+1. Make sure Docker Desktop is installed and running.
+
+2. Copy the example env file if you haven't already:
+     cp .env.example .env
+
+   The default DATABASE_URL already matches the Docker Postgres service:
+     DATABASE_URL="postgresql://postgres:postgres@localhost:5432/portfolio"
+
+3. Start ONLY the database (useful while developing the app with `npm run dev`):
+     docker compose up -d db
+
+   This starts a postgres:16-alpine container on port 5432 with a persistent
+   volume, so your data survives restarts.
+
+4. Apply the Prisma schema and seed the database:
+     npx prisma migrate dev --name init
+     npx prisma db seed
+
+5. Run the app normally:
+     npm run dev
+
+   To stop the database:
+     docker compose down
+   (add -v to also delete the data volume: docker compose down -v)
+
+
+OPTION A.1 — Run the FULL stack (app + db) in Docker
+-------------------------------------------------------------------
+
+Once you're ready to deploy, or just want a single command:
+
+     docker compose up --build
+
+This builds the Next.js app image and starts it alongside Postgres. The app
+container automatically runs `prisma migrate deploy` on startup, so the
+schema is applied before the server starts. The site will be available at
+http://localhost:3000.
+
+To seed the database the first time (only needed once, or after wiping the
+volume):
+     docker compose exec app node prisma/seed.js
+
+
+OPTION B — Install PostgreSQL locally (no Docker)
+-------------------------------------------------------------------
+
+macOS (Homebrew):
+     brew install postgresql@16
+     brew services start postgresql@16
+     createdb portfolio
+
+Windows / Linux:
+     Download and install from https://www.postgresql.org/download/
+     Then create a database named "portfolio" using pgAdmin, psql, or:
+         createdb portfolio
+
+Once Postgres is running locally, set DATABASE_URL in .env to match your
+local user/password, e.g.:
+     DATABASE_URL="postgresql://<user>:<password>@localhost:5432/portfolio"
+
+Then apply the schema and seed:
+     npx prisma migrate dev --name init
+     npx prisma db seed
+
+
+USEFUL COMMANDS
+-------------------------------------------------------------------
+     npx prisma studio        # open a GUI to browse/edit your data
+     npx prisma migrate dev   # create + apply a new migration (dev only)
+     npx prisma migrate deploy# apply existing migrations (production/Docker)
+     npx prisma db seed       # re-run the seed script

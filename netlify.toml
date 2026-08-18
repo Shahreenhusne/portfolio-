@@ -1,6 +1,0 @@
-[build]
-  command = "next build"
-  publish = ".next" # Ensure this matches your custom output directory
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
